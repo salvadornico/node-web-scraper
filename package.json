@@ -1,0 +1,20 @@
+{
+	"name": "node-web-scraper",
+	"version": "1.0.0",
+	"description": "",
+	"main": "scrape.js",
+	"scripts": {
+		"dev": "nodemon ./scrape.js localhost 8080",
+		"serve": "node scrape.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"nodemon": "^1.17.5"
+	},
+	"dependencies": {
+		"puppeteer": "^1.5.0"
+	}
+}
