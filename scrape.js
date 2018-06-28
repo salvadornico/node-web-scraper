@@ -2,7 +2,11 @@ const puppeteer = require("puppeteer")
 
 let scrape = async () => {
 	const browser = await puppeteer.launch({
-		headless: false
+		// headless - use false on native shells, true in WSL
+		// headless: false,
+		headless: true,
+		// use --no-sandbox flag in WSL
+		args: ['--no-sandbox'],
 	})
 	const page = await browser.newPage()
 
@@ -20,7 +24,8 @@ let scrape = async () => {
 		}
 	})
 
-	browser.close()
+	await page.close()
+	await browser.close()
 	return result
 }
 
